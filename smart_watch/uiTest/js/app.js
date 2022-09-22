@@ -18,6 +18,8 @@
 
 /*global listController, pageController*/
 
+
+
 (function() {
     var PERSON_DATA_NAME = [
             // Dummy data for test use.
@@ -72,7 +74,7 @@
             // (1st element)
             // No data
             // (After 2nd element)
-            "./image/settings_icon.png",
+            "./image/settings_icon_edited.png",
             "./image/aircon.png",
             "./image/cooktop.png",
             "./image/tv.png",

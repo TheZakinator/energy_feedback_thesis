@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.example.bluetooth_service" version="1.0.0">
+    <profile name="wearable" />
+    <service-application appid="org.example.bluetooth_service" exec="bluetooth_service" type="capp" multiple="false" taskmanage="false" nodisplay="true">
+        <icon>bluetooth_service.png</icon>
+        <label>bluetooth_service</label>
+	</service-application>
+</manifest>

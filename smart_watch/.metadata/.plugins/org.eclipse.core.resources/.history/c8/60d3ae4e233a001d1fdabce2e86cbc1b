@@ -1,0 +1,287 @@
+* {
+    font-family: Verdana, Lucida Sans, Arial, Helvetica, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+}
+
+#container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#page-main {
+    display: block;
+}
+
+/* ----- Main page ----- */
+.header{
+    position: absolute;
+    top: 51px;
+    left: 64px;
+    width: 232px;
+    height: 39px;
+    text-align: center;
+    color: rgba(250, 125, 47, 1);
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 39px;
+}
+
+.list-circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----- Contact page ----- */
+#page-contact {
+    background-size: contain;
+   	background-repeat: no-repeat;
+    
+}
+
+#bgcolor-contact {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#name-contact {
+    position: absolute;
+    top: 35px;
+    left: 54px;
+    width: 252px;
+    height: 47px;
+    font-size: 36px;
+    line-height: 47px;
+    color: #ffffff;
+    text-align: center;
+    
+}
+
+#content-contact {
+    position: absolute;
+    top: 131px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+#selector-box-contact {
+    height: 100px;
+    margin: auto;
+    display: table;
+}
+
+/* ----- Settings page ----- */
+
+#page-settings {
+    background-size: contain;
+   	background-repeat: no-repeat;
+    
+}
+
+#bgcolor-settings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#name-settings {
+    position: absolute;
+    top: 35px;
+    left: 54px;
+    width: 252px;
+    height: 47px;
+    font-size: 36px;
+    line-height: 47px;
+    color: #ffffff;
+    text-align: center;
+    
+}
+
+#content-settings {
+    position: absolute;
+    top: 131px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+}
+
+#selector-box-settings {
+    height: 100px;
+    margin: auto;
+    display: table;
+}
+
+
+#selector-buzz-settings {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0px 9px 0px 9px;
+    background-color: rgba(255, 255, 255, 1);
+    background-size: contain;
+    -webkit-mask-image: url("../image/wc_contact_detail_bg.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+#icon-buzz-settings {
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/settings_icon.png");
+    background-size: contain;
+    
+    background-repeat: no-repeat;
+   	background-position: center;
+   	background-origin: padding-box;
+}
+
+#selector-bluetooth-settings {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0px 9px 0px 9px;
+    background-color: rgba(0, 0, 0, 0);
+    background-size: contain;
+    
+    background-repeat: no-repeat;
+   	background-position: center;
+   	background-origin: padding-box;
+   	
+    -webkit-mask-image: url("../image/wc_contact_detail_bg.png"); 
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+#icon-bluetooth-settings {
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/Bluetooth_icon.png");
+    background-size: contain;
+    
+    background-repeat: no-repeat;
+   	background-position: center;
+   	background-origin: padding-box;
+}
+
+section {
+	&:nth-of-type(n) {
+		input {
+			position: absolute !important;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0,0,0,0);
+			bottom = 0;
+		}
+		label {
+			transition: background-color 500ms ease;
+			&:after {
+				transition: right 500ms ease,
+					background-color 500ms ease,
+					box-shadow 500ms ease;
+			}
+		}
+	}
+}
+
+
+.wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+section {
+	flex: 1;
+	padding: 15px 0;
+	text-align: center;
+}
+
+@for $i from 1 through 1 {
+	section:nth-of-type(#{$i}) {
+		background-color: darken(#eee, $i * 1.5);
+	}
+}
+
+.input-wrap {
+	position: relative;
+	padding: 8px;
+	min-width: 140px;
+}
+
+label {
+	line-height: 4px;
+	vertical-align: middle;
+}
+
+/* 
+#selector-call-contact {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0px 9px 0px 9px;
+    background-color: rgba(66, 171, 31, 1);
+    background-size: contain;
+    -webkit-mask-image: url("../image/wc_contact_detail_bg.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+
+#icon-call-contact {
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/wc_contact_detail_call_icon.png");
+    background-size: contain;
+}
+
+
+#selector-mail-contact {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0px 9px 0px 9px;
+    background-color: rgba(235, 164, 23, 1);
+    background-size: contain;
+    -webkit-mask-image: url("../image/wc_contact_detail_bg.png");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+}
+
+#icon-mail-contact {
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/wc_contact_detail_msg_icon.png");
+    background-size: contain;
+}
+
+
+#number-contact {
+    position: absolute;
+    left: 54px;
+    bottom: 59px;
+    width: 252px;
+    height: 37px;
+    font-size: 28px;
+    line-height: 37px;
+    color: #ffffff;
+    text-align: center;
+}
+
+*/
+

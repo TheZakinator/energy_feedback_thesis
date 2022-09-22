@@ -1,0 +1,23 @@
+15:58:00 **** Incremental Build of configuration Debug for project first_test_3_0 ****
+ninja all 
+[1/2] Building src/first_test_3_0.o
+clang++.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/first_test_3_0.cpp:39:26: warning: 'TouchedSignal' is deprecated [-Wdeprecated-declarations]
+
+    stage.GetRootLayer().TouchedSignal().Connect( this, &HelloWorldController::OnTouch );
+
+                         ^
+
+D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include\dali/public-api/actors/actor.h:1451:20: note: 'TouchedSignal' has been explicitly marked deprecated here
+
+  TouchSignalType& TouchedSignal() DALI_DEPRECATED_API;
+
+                   ^
+
+1 warning generated.
+
+[2/2] Linking first_test_3_0
+
+15:58:02 Build Finished (took 2s.66ms)
+

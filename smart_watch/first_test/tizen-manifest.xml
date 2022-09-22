@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.example.first_test" version="1.0.0">
+	<profile name="wearable" />
+	<ui-application appid="org.example.first_test" exec="first_test" type="capp" multiple="false" taskmanage="true" nodisplay="false">
+		<icon>first_test.png</icon>
+		<label>first_test</label>
+	</ui-application>
+</manifest>

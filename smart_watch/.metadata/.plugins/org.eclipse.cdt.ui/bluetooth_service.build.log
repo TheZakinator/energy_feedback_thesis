@@ -1,0 +1,6 @@
+16:19:01 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+
+16:19:01 Build Finished (took 103ms)
+

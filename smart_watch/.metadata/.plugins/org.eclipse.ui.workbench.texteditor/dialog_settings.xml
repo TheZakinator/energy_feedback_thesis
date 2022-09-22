@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="pushData" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="pushData"/>
+			<item value="createPageChangeFunc"/>
+			<item value="page-contact"/>
+			<item value="pageController"/>
+			<item value="buddy"/>
+			<item value="list-buddy"/>
+			<item value="listController"/>
+			<item value="list"/>
+			<item value="setHeaderAnimation"/>
+			<item value="scrollUpCallbackHeader"/>
+			<item value="yyyuy"/>
+			<item value="yy"/>
+			<item value="y"/>
+			<item value="PERSON_DATA_NAME"/>
+			<item value="press"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="282" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="460" key="DIALOG_HEIGHT"/>
+		<item value="1286" key="DIALOG_X_ORIGIN"/>
+		<item value="130" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>
