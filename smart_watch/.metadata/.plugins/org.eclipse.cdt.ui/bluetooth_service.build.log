@@ -1,6 +1,6 @@
-18:32:28 **** Incremental Build of configuration Release for project bluetooth_service ****
+17:09:08 **** Incremental Build of configuration Release for project bluetooth_service ****
 ninja all 
 ninja: no work to do.
 
-18:32:28 Build Finished (took 93ms)
+17:09:08 Build Finished (took 92ms)
 

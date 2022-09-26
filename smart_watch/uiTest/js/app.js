@@ -336,35 +336,50 @@
         }
     }
     
-    
-    function serviceEnabled() {
-    	
-//    	var obj = new tizen.ApplicationControlData("t4klDIiLoQ.bluetooth_service", ["Success"]);
+    /**
+     * Launch the bluetooth_service.c service_app_control function 
+     * If app control fails, launch the application.
+     */
+    function launchServiceAppControl() {
     	var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/customAppControl', null, null, null);
     	
+    	tizen.application.launchAppControl(appControl, 
+			"t4klDIiLoQ.bluetooth_service",
+			function() {console.log("Launch service succeeded"); },
+			function() {tizen.application.launch('http://tizen.org/appcontrol/operation/customAppControl', null, null); },
+			null);
+    }
+    
+    
+    function serviceEnabledCb() {
+    	
+    	launchServiceAppControl();
+    	
+    	var messageData = [];
+    	var btServicePortName = "BT_SERVICE_PORT";
+		var remotePort = tizen.messageport.requestRemoteMessagePort("t4klDIiLoQ.bluetooth_service", btServicePortName);
+    	
+    	
     	if (document.getElementById('service_switch').checked) {
-    		
-    		// launch service_app_control, if failure (doesn't exist), launch the service app.
-    		tizen.application.launchAppControl(appControl, 
-				"t4klDIiLoQ.bluetooth_service",
-				function() {console.log("Launch service succeeded"); },
-				function() {tizen.application.launch('http://tizen.org/appcontrol/operation/customAppControl', null, null); },
-				null);
-    		
-    		var btServicePortName = "BT_SERVICE_PORT";
-    		var remotePort = tizen.messageport.requestRemoteMessagePort("t4klDIiLoQ.bluetooth_service", btServicePortName);
-    		
-    		var messageData = [
-    		                   {key:'command', value:'begin'},
-    		                   {key:'data', value: 'hello'},
-    		                   {key:'byteData', value: 'friend'}
-    		               ];
-    		
+    	    		
+    		messageData = [ {key:'command', value:'SERVICE_ON'} ];
     		remotePort.sendMessage(messageData);
+    		 // Launch app control to analyse new data sent from message port
+    		launchServiceAppControl();
     		
+    		//check if bluetooth is also enabled -> if yes, begin reading data
+    		if (document.getElementById('bluetooth_switch').checked) {
+    			readDataFromService(true);
+    		} else {
+    			readDataFromService(false);
+    		}
     		
-//    		readDataFromService(); // start reading data from service again
     	} else {
+    		messageData = [ {key:'command', value:'SERVICE_OFF'} ];
+    		remotePort.sendMessage(messageData);
+    		launchServiceAppControl();
+    		
+    		readDataFromService(false);
     		
     	}
     }
@@ -373,9 +388,81 @@
      * bluetooth switch event listener callback
      */
     function btEnabledCb() {
+    	launchServiceAppControl();
     	
+    	var messageData = [];
+    	var btServicePortName = "BT_SERVICE_PORT";
+		var remotePort = tizen.messageport.requestRemoteMessagePort("t4klDIiLoQ.bluetooth_service", btServicePortName);
+		
+		if (document.getElementById('bluetooth_switch').checked) {
+			messageData = [ {key:'command', value:'BT_ACTIVATED'} ];
+			remotePort.sendMessage(messageData);
+    		launchServiceAppControl();
+		} else {
+			messageData = [ {key:'command', value:'BT_DEACTIVATED'} ];
+			remotePort.sendMessage(messageData);
+    		launchServiceAppControl();
+		}
     }
     
+    /**
+     * toggle switch
+     */
+//    function toggle(switchId, switchState) {
+//    	const elm = document.getElementById(switchId);
+//    	if (switchState !== elm.checked) {
+//    		elm.click();
+//    	}
+//    }
+    
+    /**
+     * Message callback function FROM service application
+     */
+    function dataFromService(localPort) {
+        localPort.addMessagePortListener(function(data, replyPort) {
+        	
+        	for (var i = 0; i < data.length; i++) {
+        		var key = data[i].key;
+        		
+        		switch (key) {
+        		case 'command':
+        			if (data[i].value.localeCompare("BT_ENABLED")) {
+//        				toggle('bluetooth_switch', true);
+        				document.getElementById('bluetooth_switch').checked = true;
+        				// check if user has switched the service on -> if yes, start reading data
+        				if (document.getElementById('service_switch').checked) {
+        					readDataFromService(true);
+        				} else {
+        					readDataFromService(false);
+        				}
+        				
+        			} else if (data[i].value.localeCompare("BT_DISABLED")) {
+//        				toggle('bluetooth_switch', false);
+        				document.getElementById('bluetooth_switch').checked = false;
+        				readDataFromService(false);
+        				
+        			}
+        			break;
+        		}
+        	}
+        	
+        	if (replyPort) {
+        		console.log('here is your reply' + replyPort.messagePortName);
+        	}
+        });
+
+    }
+    
+    function readDataFromService(continueReading) {
+    	
+    	launchServiceAppControl();
+    	
+    	// call this function every 3 seconds to continiously read 
+    	// data from the service application
+    	if (continueReading) {
+    		setInterval(readDataFromService(continueReading), 3000);
+    	}
+    }
     
     /**
      * Initiates the application.
@@ -387,14 +474,19 @@
         pushData();
         // Add hardware key event listener
         window.addEventListener("tizenhwkey", keyEventHandler);
-        
+                
         // Attach event listener to settings -> service switch
         const service_switch = document.getElementById('service_switch'); 
-        service_switch.addEventListener('click', serviceEnabled);
+        service_switch.addEventListener('click', serviceEnabledCb);
         
         // Attach event listener to settings -> bt enable switch
         const bluetooth_switch = document.getElementById('bluetooth_switch'); 
         bluetooth_switch.addEventListener('click', btEnabledCb);
+        
+        var localPort = tizen.messageport.requestLocalMessagePort("APP_PORT");
+        var targetApplicationId = tizen.application.getCurrentApplication().appInfo.id;
+        tizen.messageport.requestRemoteMessagePort(targetApplicationId, "APP_PORT");
+        dataFromService(localPort);
         
         
         // Add both pages to the page controller
@@ -406,8 +498,8 @@
         listController.setScrollUpCallback(scrollUpCallbackHeader);
         listController.setScrollDownCallback(scrollDownCallbackHeader);
         
-        // start reading data from bluetooth service application
-//        readDataFromService();
+        // start reading data from bluetooth service application -> true at start time
+        readDataFromService(true);
         
     }
 

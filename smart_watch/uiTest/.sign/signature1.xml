@@ -4,18 +4,18 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>g/8uHPz/A1HL8Ea/Ppe0v+gQr7hG7BRFMAoeXIo1l41BxrtkUbs6gn5vlK6alem0u6oduZUNDA9D
-ZNu3+MVY9A==</DigestValue>
+<DigestValue>GEK4k9YHSlkUE20L5S0a83vnH5Irr5+W+OslCiNvNhd81zL717R1Ac3fhi5e0auO8DlITHKAULPN
+BvxNZjmuzQ==</DigestValue>
 </Reference>
 <Reference URI="bin%2Fbluetooth_service">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>X+ZDbAcUOEsvMVQ3GPrATi6lf3lyZSeREImOieRmtPUsHpgrPSeWr52KcoQuxnkmCa3Dy9bSmCSa
-LDK59ykItw==</DigestValue>
+<DigestValue>P2Y+R9qe5E/lYMpFi17eJi1r4nISIzgx42QYyicrPrCQqvI7PxhUCNdmd+z/xLo6l02y84cGErtW
+p7JKA3dI8Q==</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>31+zgeDiooSy+XB8sqRB9jCyj+xRBkqBRnJKOuKr6US5HoIZmXm6kFAk9jfj1VcQlCXT5TgMWliW
-HT3evNK/oA==</DigestValue>
+<DigestValue>jIsbc9kZikFYPTRggxq7pC9wL1tDsvpk7Jl0hl9DCi7F7c6q//mRu9UKTi5MjYWqllcx90wjpB1M
+1BRg/Lcj5Q==</DigestValue>
 </Reference>
 <Reference URI="res%2Fwgt%2F39698041-fighter-jet-wallpapers.jpg">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -184,13 +184,13 @@ YSccxwoiWg==</DigestValue>
 </Reference>
 <Reference URI="res%2Fwgt%2Findex.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>vVrEQ6fH+N3aB2uzgB8FvBF9rznkboXiP8E6WnuNjCvIvlJHIejqD8YKxiipwkpAmmXjTQB1QPnO
-pLWFLpD2JA==</DigestValue>
+<DigestValue>dUQAsCewIjzjS8lryQadmPY9hyDCmjzOSnpAWT8/A7L9SGOeJvPt6VfIcLdo0WC2CIbVIINZEbJy
+tXP3AssrAw==</DigestValue>
 </Reference>
 <Reference URI="res%2Fwgt%2Fjs%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
-<DigestValue>Fhq0CmXN6WyTeLFtQbi5Viw/+Snk9JiuGKq/a2WMXEglUWPsxGmHad031MgSpiOmXI5XCsrU84w9
-4FcSVn9cdw==</DigestValue>
+<DigestValue>XqeHZzL7KTqkZ3QVwFJe6zSQhZsRqySYjK50V8qbjmrz1pmKnCgOgI+EJc1TGHADHzeb2V43+wlE
++Y9jaD2p/g==</DigestValue>
 </Reference>
 <Reference URI="res%2Fwgt%2Fjs%2Fcustom-indicator.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"></DigestMethod>
@@ -227,11 +227,11 @@ GyvKX9Snig==</DigestValue>
 </Reference>
 </SignedInfo>
 <SignatureValue>
-OZqgefF58XVKp5lcFThpT5lBuJSb2W4Bm/0uk65bRiqOOuG6svtftyJvHtKdUwsgtE25F0SzAkhx
-fxdaQI3NiHREg3id0v4ytCf7IIwMK+AuPkt73NkRXvYDYfpYh2XRLj0oY0etB1GvEVBXXk1kTgl7
-DCQ9TC9J9AkyzSm7P7PJ1sYoN4Us0YFGfG4YmXviPg/8iH5S0X/9AbbDX4FkJpPgMz2ex/z2jDxg
-JeP7NQD4hps5DW51AxmN8Mjo8keFvLO6cDL0DLvrGL5MI1EAEVmYiOC8uZH3tJShikmoL/Qip7R+
-lgk5UVnpb6d5pai3ZBQMJkKUNcPzuNFab6OCoQ==
+JBRDv6Pmc1w3EGZ/4YzeH1nB5GiFBkE3a3i98+zvT/HAux3musibC4lFLNJqSElxVK3vyOkFByRr
+U4L134YCDS6QkBdl6IJO0Ow8ScKqmb5XaB/FtgEuCyiOJ8+zikgiaUzq9ma1VZLhVIi6DXiZfvcG
+cYTQWLKAfVsYGhMP+s4N70I40D6y/w5VPiCCYKKMt8Tjk32Jif55H3uOkqtgGjMCXl6iZpcOBXas
+Ur/pJ6OHHZcunoSgd4ctrMWfnDGgeMEhv1l1qw0/pVOeGZDY7jf8DdkoA7vRQOsFIRdNRHv6gtgv
+Gafj4Zv3KfHHWagjhFMuBO75LyD89BD5v3G85w==
 </SignatureValue>
 <KeyInfo>
 <X509Data>
