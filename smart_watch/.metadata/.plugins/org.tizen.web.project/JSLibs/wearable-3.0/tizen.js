@@ -9383,7 +9383,7 @@ InputDeviceManagerObject.prototype.inputdevice = new InputDeviceManager();
 /**
  * The name of the key, for example or .
  * <p>
-If the key is listed in the <a href="http://www.w3.ohttp://127.0.0.1:59902/help/topic/2014/WD-DOM-Level-3-Events-key-20140612">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="http://www.w3.ohttp://127.0.0.1:59902/help/topic/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
+If the key is listed in the <a href="http://www.w3.ohttp://127.0.0.1:49481/help/topic/2014/WD-DOM-Level-3-Events-key-20140612">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="http://www.w3.ohttp://127.0.0.1:49481/help/topic/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
             </p>
  * <p>
 If the "DOM Level 3 KeyboardEvent key Value" does not contain appropriate entry for the key, then the Input Device provides a device specific <em>name</em>.
@@ -19347,7 +19347,7 @@ WebAPIException.DATA_CLONE_ERR = new Number();
 /**
  * 16-bit error code.
  * <p>
-For the possible values of this attribute, see <a href="http://www.w3.ohttp://127.0.0.1:59902/help/topic/dom/#domexception">DOMException</a>.
+For the possible values of this attribute, see <a href="http://www.w3.ohttp://127.0.0.1:49481/help/topic/dom/#domexception">DOMException</a>.
             </p>
  *
  * @type Number
@@ -19367,7 +19367,7 @@ This attribute can have one of the following values:
  * <li>VerificationError - An error occurred in authentication and so the requested method cannot be completed.
  * </ul>
  * <p>
-For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:59902/help/topic/dom/#error-names-0">DOM error names</a>            </p>
+For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:49481/help/topic/dom/#error-names-0">DOM error names</a>            </p>
  *
  * @type String
  */
@@ -19475,7 +19475,7 @@ AttributeFilter.prototype.matchValue = new any();
 /**
  * 16-bit error code.
  * <p>
-Possible values are defined in <a href="http://www.w3.ohttp://127.0.0.1:59902/help/topic/dom/#domexception">DOMException</a>.
+Possible values are defined in <a href="http://www.w3.ohttp://127.0.0.1:49481/help/topic/dom/#domexception">DOMException</a>.
             </p>
  *
  * @type Number
@@ -19495,7 +19495,7 @@ This attribute can have one of the following values:
  * <li>VerificationError - An error occurred in authentication and so the requested method cannot be completed.
  * </ul>
  * <p>
-For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:59902/help/topic/dom/#error-names-0">DOM error names</a>            </p>
+For other possible values of this attribute, see the values defined in <a href="http://www.w3.ohttp://127.0.0.1:49481/help/topic/dom/#error-names-0">DOM error names</a>            </p>
  *
  * @type String
  */

@@ -3,6 +3,7 @@
 	<name>uiTest</name>
 	<comment></comment>
 	<projects>
+		<project>bluetooth_service</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

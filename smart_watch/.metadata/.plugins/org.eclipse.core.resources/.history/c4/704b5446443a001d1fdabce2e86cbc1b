@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Bzzzzzz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/custom-indicator.css">
+</head>
+
+<body>
+    <div id="container">
+    
+        <div id="page-main" class="page">
+            <div class="header full">Bzzzzzz</div>
+            <div class="list-circle" id="list-buddy">
+                <div class="list-focus-area">
+                    <div class="list-focus">
+                    </div>
+                    <div class="list-label">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="page-contact" class="page">
+            <div id="bgcolor-contact"></div>
+            <div id="name-contact"></div>
+            <div id="content-contact">
+                <div id="selector-box-contact">
+                    <div id="selector-call-contact">
+                        <div id="icon-call-contact"></div>
+                    </div>
+                    <div id="selector-mail-contact">
+                        <div id="icon-mail-contact"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="number-contact"></div>
+        </div>
+        
+        <div id="page-settings" class="page">
+        	<div id="bgcolor-settings"></div>
+        	<div id="name-settings"></div>
+        	<div id="content-settings">
+        		<input type="checkbox" class="toggle-switch">
+        		<input type="checkbox" class="toggle-switch" checked>
+        	<!--  
+        		<div class="wrap">
+        			<section>
+        				<div class="input-wrap">
+        					<input id="input-7" type="checkbox" checked>
+        					<label for="input-7">Select</label>
+        				</div>
+        			</section>
+		        </div>
+		     -->
+		        
+        		<div id="selector-box-settings">        			        
+	        		<div id="selector-buzz-settings">		        		
+	        			<div id="icon-buzz-settings"></div>
+	        		</div>
+	        		<div id="selector-bluetooth-settings">
+	        			<div id="icon-bluetooth-settings"></div>
+	        		</div>
+        		</div>
+        	</div>
+        	<div id="number-settings"></div>
+        </div>
+    </div>
+
+    <script src="js/page.js"></script>
+    <script src="js/custom-indicator.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

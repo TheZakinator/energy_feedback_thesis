@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="t4klDIiLoQ.bluetooth_service" version="1.0.0">
+    <profile name="wearable"/>
+    <service-application appid="t4klDIiLoQ.bluetooth_service" auto-restart="true" exec="bluetooth_service" multiple="false" nodisplay="true" on-boot="true" taskmanage="false" type="capp">
+        <label>bluetooth_service</label>
+        <icon>bluetooth_service.png</icon>
+    </service-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/bluetooth</privilege>
+        <privilege>http://tizen.org/privilege/haptic</privilege>
+        <privilege>http://tizen.org/privilege/display</privilege>
+    </privileges>
+    <feature name="http://tizen.org/feature/network.bluetooth">true</feature>
+</manifest>

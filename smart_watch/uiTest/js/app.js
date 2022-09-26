@@ -18,7 +18,7 @@
 
 /*global listController, pageController*/
 
-
+//var gServiceAppId = 'org.example.bluetooth_service';
 
 (function() {
     var PERSON_DATA_NAME = [
@@ -335,7 +335,48 @@
             }
         }
     }
-
+    
+    
+    function serviceEnabled() {
+    	
+//    	var obj = new tizen.ApplicationControlData("t4klDIiLoQ.bluetooth_service", ["Success"]);
+    	var appControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/customAppControl', null, null, null);
+    	
+    	if (document.getElementById('service_switch').checked) {
+    		
+    		// launch service_app_control, if failure (doesn't exist), launch the service app.
+    		tizen.application.launchAppControl(appControl, 
+				"t4klDIiLoQ.bluetooth_service",
+				function() {console.log("Launch service succeeded"); },
+				function() {tizen.application.launch('http://tizen.org/appcontrol/operation/customAppControl', null, null); },
+				null);
+    		
+    		var btServicePortName = "BT_SERVICE_PORT";
+    		var remotePort = tizen.messageport.requestRemoteMessagePort("t4klDIiLoQ.bluetooth_service", btServicePortName);
+    		
+    		var messageData = [
+    		                   {key:'command', value:'begin'},
+    		                   {key:'data', value: 'hello'},
+    		                   {key:'byteData', value: 'friend'}
+    		               ];
+    		
+    		remotePort.sendMessage(messageData);
+    		
+    		
+//    		readDataFromService(); // start reading data from service again
+    	} else {
+    		
+    	}
+    }
+    
+    /**
+     * bluetooth switch event listener callback
+     */
+    function btEnabledCb() {
+    	
+    }
+    
+    
     /**
      * Initiates the application.
      * @private
@@ -346,6 +387,16 @@
         pushData();
         // Add hardware key event listener
         window.addEventListener("tizenhwkey", keyEventHandler);
+        
+        // Attach event listener to settings -> service switch
+        const service_switch = document.getElementById('service_switch'); 
+        service_switch.addEventListener('click', serviceEnabled);
+        
+        // Attach event listener to settings -> bt enable switch
+        const bluetooth_switch = document.getElementById('bluetooth_switch'); 
+        bluetooth_switch.addEventListener('click', btEnabledCb);
+        
+        
         // Add both pages to the page controller
         pageController.addPage("page-main");
         pageController.addPage("page-contact");
@@ -354,6 +405,10 @@
         // Those functions will animate the header if needed.
         listController.setScrollUpCallback(scrollUpCallbackHeader);
         listController.setScrollDownCallback(scrollDownCallbackHeader);
+        
+        // start reading data from bluetooth service application
+//        readDataFromService();
+        
     }
 
     window.onload = init();

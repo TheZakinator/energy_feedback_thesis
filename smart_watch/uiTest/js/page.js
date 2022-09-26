@@ -240,10 +240,10 @@ var pageController = (function() {
      * @public
      */
     this.setPageBgImage = function(page, imagePath) {
-        var elmPage;
+//        var elmPage;
 
         if (self.isPageExist(page) === true) {
-            elmPage = document.querySelector("#" + page);
+        	const elmPage = document.querySelector("#" + page);
             if (imagePath && typeof imagePath === "string") {
                 elmPage.style.backgroundImage = "url(" + imagePath + ")";
             } else {

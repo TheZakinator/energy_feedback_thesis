@@ -1702,3 +1702,1053 @@ ninja: no work to do.
 16:19:01 **** Incremental Build of configuration Debug for project first_test ****
 ninja all 
 ninja: no work to do.
+16:56:44 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+16:56:45 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+16:59:15 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+16:59:15 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:28:05 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+[2/2] Linking bluetooth_service
+17:28:05 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:28:08 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:12:50 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:12:51 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:13:17 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:13:17 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:14:47 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:19:31 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:19:32 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:19:34 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:32:19 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+FAILED: clang.exe -MMD -MT src/bluetooth_service.o -MF src/bluetooth_service.o.d  -DTIZEN_DEPRECATION -DDEPRECATION_WARNING -D_DEBUG -I"C:/Users/zakja/OneDrive/Desktop/Engineering/Thesis/energy_feedback_thesis/smart_watch/bluetooth_service/inc" -O0 -g3 -Wall -c -fmessage-length=0 -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/libxml2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/appcore-agent" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/appcore-watch" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/appfw" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/badge" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/base" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/cairo" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/calendar-service2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/chromium-ewk" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ckm" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/contacts-svc" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/content" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/context-service" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/csr" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/dali" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/dali-toolkit" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/dbus-1.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/device" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/dlog" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-buffer-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-con-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-file-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-imf-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-imf-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-input-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-input-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ecore-ipc-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ector-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/e_dbus-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/edje-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eet-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/efl-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/efl-extension" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/efreet-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eina-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eina-1/eina" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eio-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eldbus-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/elementary-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/embryo-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/emile-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eo-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/eom" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ethumb-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ethumb-client-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/feedback" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/fontconfig" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/freetype2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/gio-unix-2.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/glib-2.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/harfbuzz" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/iotcon" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/json-glib-1.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/location" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/maps" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/media" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/media-content" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/messaging" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/metadata-editor" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/minizip" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/network" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/notification" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/nsd/" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/phonenumber-utils" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/SDL2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/sensor" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/storage" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/system" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/telephony" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/tzsh" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/ui" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/vulkan" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/widget_service" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/widget_viewer_dali" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/widget_viewer_evas" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/include/yaca" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/lib/dbus-1.0/include" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core/usr/lib/glib-2.0/include" -target i386-tizen-linux-gnueabi -gcc-toolchain "D:/tizen_studio/tools/smart-build-interface/../i386-linux-gnueabi-gcc-4.9/" -ccc-gcc-name i386-linux-gnueabi-g++ -march=i386 -Wno-gnu  -fPIE --sysroot="D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-emulator.core" --param=ssp-buffer-size=4 -fasynchronous-unwind-tables -fno-omit-frame-pointer -msse4.2 -m32 -mfpmath=sse -Werror-implicit-function-declaration  -c ../src/bluetooth_service.c -o src/bluetooth_service.o
+../src/bluetooth_service.c:13:32: error: use of undeclared identifier 'device_handle_h'
+
+        int x = device_haptic_open(0, device_handle_h);
+
+                                      ^
+
+../src/bluetooth_service.c:14:32: error: unexpected type name 'haptic_device_h': expected expression
+
+        int y = device_haptic_vibrate(haptic_device_h, 2000, 50, haptic_effect_h);
+
+                                      ^
+
+../src/bluetooth_service.c:14:59: error: unexpected type name 'haptic_effect_h': expected expression
+
+        int y = device_haptic_vibrate(haptic_device_h, 2000, 50, haptic_effect_h);
+
+                                                                 ^
+
+3 errors generated.
+
+ninja: build stopped: subcommand failed.
+19:32:19 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:33:41 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+../src/bluetooth_service.c:16:6: warning: unused variable 'x' [-Wunused-variable]
+
+        int x = device_haptic_open(0, hapticDevice);
+
+            ^
+
+../src/bluetooth_service.c:17:6: warning: unused variable 'y' [-Wunused-variable]
+
+        int y = device_haptic_vibrate(hapticDevice, 2000, 50, hapticEffect);
+
+            ^
+
+../src/bluetooth_service.c:16:32: warning: variable 'hapticDevice' is uninitialized when used here [-Wuninitialized]
+
+        int x = device_haptic_open(0, hapticDevice);
+
+                                      ^~~~~~~~~~~~
+
+../src/bluetooth_service.c:13:31: note: initialize the variable 'hapticDevice' to silence this warning
+
+        haptic_device_h* hapticDevice;
+
+                                     ^
+
+                                      = NULL
+
+../src/bluetooth_service.c:17:56: warning: variable 'hapticEffect' is uninitialized when used here [-Wuninitialized]
+
+        int y = device_haptic_vibrate(hapticDevice, 2000, 50, hapticEffect);
+
+                                                              ^~~~~~~~~~~~
+
+../src/bluetooth_service.c:14:31: note: initialize the variable 'hapticEffect' to silence this warning
+
+        haptic_effect_h* hapticEffect;
+
+                                     ^
+
+                                      = NULL
+
+4 warnings generated.
+
+[2/2] Linking bluetooth_service
+19:33:42 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:37:18 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+../src/bluetooth_service.c:14:6: warning: unused variable 'x' [-Wunused-variable]
+
+        int x = device_haptic_open(0, handle);
+
+            ^
+
+../src/bluetooth_service.c:15:6: warning: unused variable 'y' [-Wunused-variable]
+
+        int y = device_haptic_vibrate(handle, 2000, 50, effect);
+
+            ^
+
+../src/bluetooth_service.c:14:32: warning: variable 'handle' is uninitialized when used here [-Wuninitialized]
+
+        int x = device_haptic_open(0, handle);
+
+                                      ^~~~~~
+
+../src/bluetooth_service.c:10:24: note: initialize the variable 'handle' to silence this warning
+
+        haptic_device_h handle;
+
+                              ^
+
+                               = NULL
+
+../src/bluetooth_service.c:15:50: warning: variable 'effect' is uninitialized when used here [-Wuninitialized]
+
+        int y = device_haptic_vibrate(handle, 2000, 50, effect);
+
+                                                        ^~~~~~
+
+../src/bluetooth_service.c:11:24: note: initialize the variable 'effect' to silence this warning
+
+        haptic_effect_h effect;
+
+                              ^
+
+                               = NULL
+
+4 warnings generated.
+
+[2/2] Linking bluetooth_service
+19:37:19 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:37:39 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+../src/bluetooth_service.c:14:6: warning: unused variable 'x' [-Wunused-variable]
+
+        int x = device_haptic_open(0, &handle);
+
+            ^
+
+../src/bluetooth_service.c:15:6: warning: unused variable 'y' [-Wunused-variable]
+
+        int y = device_haptic_vibrate(&handle, 2000, 50, &effect);
+
+            ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+19:37:40 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:37:58 **** Clean-only build of configuration Debug for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+19:37:59 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+19:37:59 **** Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+../src/bluetooth_service.c:14:6: warning: unused variable 'x' [-Wunused-variable]
+
+        int x = device_haptic_open(0, &handle);
+
+            ^
+
+../src/bluetooth_service.c:15:6: warning: unused variable 'y' [-Wunused-variable]
+
+        int y = device_haptic_vibrate(&handle, 2000, 50, &effect);
+
+            ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+19:38:00 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+19:39:53 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+[2/2] Linking bluetooth_service
+19:39:54 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:43:27 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:43:27 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:43:41 **** Incremental Build of configuration Debug for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+19:43:42 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+19:58:22 **** Clean-only build of configuration Debug for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+19:58:22 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+19:58:22 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+19:58:24 **** Build of configuration Debug for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+[2/2] Linking bluetooth_service
+20:14:10 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+20:14:10 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+[2/2] Linking bluetooth_service
+20:14:55 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:15:06 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+20:15:06 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:15:09 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:15:27 **** Clean-only build of configuration Release for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+20:15:27 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+20:15:27 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+20:15:28 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+[2/2] Linking bluetooth_service
+20:15:38 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:21:22 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+20:21:22 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:27:58 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+20:28:26 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+20:28:26 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:28:31 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:31:14 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:31:53 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:32:14 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:32:27 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+20:32:28 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:32:32 **** Clean-only build of configuration Release for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+20:32:32 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+20:32:32 **** Build of configuration Debug for project first_test ****
+ninja all 
+Recompacting log...
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+20:32:33 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+20:32:39 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:39:59 **** Clean-only build of configuration Release for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+20:39:59 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+20:40:00 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+20:40:01 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+20:40:15 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+20:40:56 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+13:04:07 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+13:04:08 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:42:8: warning: unused variable 'app_id' [-Wunused-variable]
+
+        char* app_id;
+
+              ^
+
+1 warning generated.
+
+[2/2] Linking bluetooth_service
+13:04:50 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+13:04:51 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+13:04:58 **** Clean-only build of configuration Release for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+13:04:58 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+13:04:58 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+13:05:03 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+13:06:40 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+14:06:18 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+14:06:18 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+14:06:42 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:18:09 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+15:18:09 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+FAILED: clang.exe -MMD -MT src/bluetooth_service.o -MF src/bluetooth_service.o.d  -DTIZEN_DEPRECATION -DDEPRECATION_WARNING -I"C:/Users/zakja/OneDrive/Desktop/Engineering/Thesis/energy_feedback_thesis/smart_watch/bluetooth_service/inc" -O3 -Wall -c -fmessage-length=0 -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/libxml2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/appcore-agent" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/appcore-watch" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/appfw" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/badge" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/base" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/cairo" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/calendar-service2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/chromium-ewk" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ckm" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/contacts-svc" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/content" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/context-service" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/csr" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dali" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dali-toolkit" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dbus-1.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/device" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dlog" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-buffer-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-con-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-file-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-imf-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-imf-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-input-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-input-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-ipc-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ector-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/e_dbus-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/edje-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eet-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/efl-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/efl-extension" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/efreet-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eina-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eina-1/eina" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eio-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eldbus-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/elementary-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/embryo-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/emile-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eo-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eom" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ethumb-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ethumb-client-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/feedback" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/fontconfig" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/freetype2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/gio-unix-2.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/glib-2.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/harfbuzz" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/iotcon" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/json-glib-1.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/location" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/maps" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/media" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/media-content" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/messaging" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/metadata-editor" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/minizip" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/network" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/notification" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/nsd/" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/phonenumber-utils" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/SDL2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/sensor" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/storage" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/system" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/telephony" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/tzsh" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ui" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/vulkan" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/widget_service" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/widget_viewer_dali" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/widget_viewer_evas" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/yaca" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/lib/dbus-1.0/include" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/lib/glib-2.0/include" -target arm-tizen-linux-gnueabi -gcc-toolchain "D:/tizen_studio/tools/smart-build-interface/../arm-linux-gnueabi-gcc-4.9/" -ccc-gcc-name arm-linux-gnueabi-g++ -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mtune=cortex-a8 -Wno-gnu  -fPIE --sysroot="D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core" -mthumb --param=ssp-buffer-size=4 -mlittle-endian -mfloat-abi=softfp -Wl,--hash-style=gnu -Wp,-D__SOFTFP -Werror-implicit-function-declaration  -c ../src/bluetooth_service.c -o src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:41:25: error: use of undeclared identifier 'handle'
+
+        device_haptic_open(0, &handle);
+
+                               ^
+
+../src/bluetooth_service.c:42:24: error: use of undeclared identifier 'handle'
+
+        device_haptic_vibrate(handle, 100, 10, &effect);
+
+                              ^
+
+../src/bluetooth_service.c:42:42: error: use of undeclared identifier 'effect'
+
+        device_haptic_vibrate(handle, 100, 10, &effect);
+
+                                                ^
+
+../src/bluetooth_service.c:43:24: error: use of undeclared identifier 'handle'
+
+        device_haptic_vibrate(handle, 1000, 20, &effect);
+
+                              ^
+
+../src/bluetooth_service.c:43:43: error: use of undeclared identifier 'effect'
+
+        device_haptic_vibrate(handle, 1000, 20, &effect);
+
+                                                 ^
+
+../src/bluetooth_service.c:44:24: error: use of undeclared identifier 'handle'
+
+        device_haptic_vibrate(handle, 1500, 50, &effect);
+
+                              ^
+
+../src/bluetooth_service.c:44:43: error: use of undeclared identifier 'effect'
+
+        device_haptic_vibrate(handle, 1500, 50, &effect);
+
+                                                 ^
+
+../src/bluetooth_service.c:45:24: error: use of undeclared identifier 'handle'
+
+        device_haptic_vibrate(handle, 3000, 75, &effect);
+
+                              ^
+
+../src/bluetooth_service.c:45:43: error: use of undeclared identifier 'effect'
+
+        device_haptic_vibrate(handle, 3000, 75, &effect);
+
+                                                 ^
+
+9 errors generated.
+
+ninja: build stopped: subcommand failed.
+15:18:25 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+15:18:25 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+15:18:34 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:19:34 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+15:19:35 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:19:50 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:21:47 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+15:21:47 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:21:57 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+15:21:58 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:22:02 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:25:15 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+15:25:15 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:25:20 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+15:25:51 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+16:53:42 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+16:53:42 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+FAILED: clang.exe -MMD -MT src/bluetooth_service.o -MF src/bluetooth_service.o.d  -DTIZEN_DEPRECATION -DDEPRECATION_WARNING -I"C:/Users/zakja/OneDrive/Desktop/Engineering/Thesis/energy_feedback_thesis/smart_watch/bluetooth_service/inc" -O3 -Wall -c -fmessage-length=0 -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/libxml2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/appcore-agent" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/appcore-watch" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/appfw" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/badge" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/base" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/cairo" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/calendar-service2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/chromium-ewk" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ckm" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/contacts-svc" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/content" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/context-service" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/csr" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dali" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dali-toolkit" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dbus-1.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/device" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/dlog" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-buffer-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-con-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-file-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-imf-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-imf-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-input-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-input-evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ecore-ipc-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ector-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/e_dbus-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/edje-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eet-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/efl-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/efl-extension" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/efreet-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eina-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eina-1/eina" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eio-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eldbus-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/elementary-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/embryo-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/emile-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eo-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/eom" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ethumb-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ethumb-client-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/evas-1" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/feedback" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/fontconfig" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/freetype2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/gio-unix-2.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/glib-2.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/harfbuzz" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/iotcon" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/json-glib-1.0" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/location" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/maps" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/media" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/media-content" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/messaging" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/metadata-editor" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/minizip" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/network" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/notification" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/nsd/" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/phonenumber-utils" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/SDL2" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/sensor" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/storage" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/system" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/telephony" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/tzsh" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/ui" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/vulkan" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/widget_service" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/widget_viewer_dali" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/widget_viewer_evas" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/include/yaca" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/lib/dbus-1.0/include" -I"D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core/usr/lib/glib-2.0/include" -target arm-tizen-linux-gnueabi -gcc-toolchain "D:/tizen_studio/tools/smart-build-interface/../arm-linux-gnueabi-gcc-4.9/" -ccc-gcc-name arm-linux-gnueabi-g++ -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -mtune=cortex-a8 -Wno-gnu  -fPIE --sysroot="D:/tizen_studio/tools/smart-build-interface/../../platforms/tizen-3.0/wearable/rootstraps/wearable-3.0-device.core" -mthumb --param=ssp-buffer-size=4 -mlittle-endian -mfloat-abi=softfp -Wl,--hash-style=gnu -Wp,-D__SOFTFP -Werror-implicit-function-declaration  -c ../src/bluetooth_service.c -o src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:9:68: error: unknown type name 'const_char'
+
+void message_port_cb(int local_port_id, const char* remote_app_id, const_char* remote_port,
+
+                                                                   ^
+
+../src/bluetooth_service.c:43:6: warning: unused variable 'local_port_id' [-Wunused-variable]
+
+        int local_port_id = message_port_register_local_port("BT_SERVICE_PORT", message_port_cb, NULL);
+
+            ^
+
+1 warning and 1 error generated.
+
+ninja: build stopped: subcommand failed.
+16:54:35 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+16:54:35 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:43:6: warning: unused variable 'local_port_id' [-Wunused-variable]
+
+        int local_port_id = message_port_register_local_port("BT_SERVICE_PORT", message_port_cb, NULL);
+
+            ^
+
+1 warning generated.
+
+[2/2] Linking bluetooth_service
+16:54:43 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:14:39 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:14:39 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:43:6: warning: unused variable 'local_port_id' [-Wunused-variable]
+
+        int local_port_id = message_port_register_local_port("BT_SERVICE_PORT", message_port_cb, NULL);
+
+            ^
+
+1 warning generated.
+
+[2/2] Linking bluetooth_service
+17:14:43 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:15:49 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:15:50 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:15:57 **** Clean-only build of configuration Release for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+17:15:57 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+17:15:57 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+17:15:58 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:43:6: warning: unused variable 'local_port_id' [-Wunused-variable]
+
+        int local_port_id = message_port_register_local_port("BT_SERVICE_PORT", message_port_cb, NULL);
+
+            ^
+
+1 warning generated.
+
+[2/2] Linking bluetooth_service
+17:16:05 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:24:20 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+17:24:21 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:43:6: warning: unused variable 'local_port_id' [-Wunused-variable]
+
+        int local_port_id = message_port_register_local_port("BT_SERVICE_PORT", message_port_cb, NULL);
+
+            ^
+
+1 warning generated.
+
+[2/2] Linking bluetooth_service
+17:24:30 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:24:30 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+17:24:36 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:25:31 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:25:32 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+17:25:33 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:28:28 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:28:28 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+17:28:31 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:29:27 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:29:28 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+17:29:29 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+17:55:11 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+17:55:12 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+17:55:14 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:06:33 **** Clean-only build of configuration Release for project bluetooth_service ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+18:06:34 **** Clean-only build of configuration Debug for project first_test ****
+ninja clean 
+[1/3] Cleaning Coverage Reports..
+[2/3] Cleaning SA Report files ..
+[3/3] Cleaning build files ...
+Cleaning... 2 files.
+
+18:06:34 **** Build of configuration Debug for project first_test ****
+ninja all 
+[1/2] Building src/first_test.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking first_test
+18:06:35 **** Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+18:06:38 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:07:27 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:07:28 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+18:07:29 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:09:10 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:09:10 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+18:09:18 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:09:18 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+[2/2] Linking bluetooth_service
+18:09:20 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:11:32 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:11:32 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:11:36 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:16:24 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:16:25 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:16:27 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:19:32 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:19:32 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:19:47 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:19:48 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:19:49 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:25:41 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:25:41 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:25:47 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:27:59 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:27:59 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:28:01 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:29:11 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:29:11 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:29:16 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.
+18:32:26 **** Incremental Build of configuration Debug for project first_test ****
+ninja all 
+ninja: no work to do.
+18:32:26 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+[1/2] Building src/bluetooth_service.o
+clang.exe: warning: -Wl,--hash-style=gnu: 'linker' input unused
+
+../src/bluetooth_service.c:14:18: warning: unused variable 'handle' [-Wunused-variable]
+
+        haptic_device_h handle;
+
+                        ^
+
+../src/bluetooth_service.c:15:18: warning: unused variable 'effect' [-Wunused-variable]
+
+        haptic_effect_h effect;
+
+                        ^
+
+2 warnings generated.
+
+[2/2] Linking bluetooth_service
+18:32:28 **** Incremental Build of configuration Release for project bluetooth_service ****
+ninja all 
+ninja: no work to do.

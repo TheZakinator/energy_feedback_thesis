@@ -1,6 +1,6 @@
-16:19:01 **** Incremental Build of configuration Debug for project first_test ****
+18:32:26 **** Incremental Build of configuration Debug for project first_test ****
 ninja all 
 ninja: no work to do.
 
-16:19:02 Build Finished (took 96ms)
+18:32:26 Build Finished (took 95ms)
 

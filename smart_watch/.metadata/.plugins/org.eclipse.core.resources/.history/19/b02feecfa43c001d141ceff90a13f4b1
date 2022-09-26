@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/uiTest" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="t4klDIiLoQ.uiTest" package="t4klDIiLoQ" required_version="2.3"/>    
+    <app-control>
+    	<operation name="http://tizen.org/appcontrol/operation/customAppControl"/>
+    </app-control>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.normal"/>
+    <feature name="http://tizen.org/feature/input.rotating_bezel"/>
+    <feature name="http://tizen.org/feature/network.bluetooth"/>
+    <feature name="http://tizen.org/feature/network.bluetooth.le"/>
+    <icon src="39698041-fighter-jet-wallpapers.jpg"/>
+    <name>uiTest</name>
+    <tizen:privilege name="http://tizen.org/privilege/bluetooth"/>
+    <tizen:privilege name="http://tizen.org/privilege/bluetoothmanager"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/application.info" /> 
+    <tizen:privilege name="http://tizen.org/privilege/appmanager.launch" /> 
+    <tizen:profile name="wearable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>
