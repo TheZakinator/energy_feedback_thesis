@@ -10,7 +10,7 @@ cmake_minimum_required(VERSION 3.20.0)
 # ENDIF()
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
-project(proxy_node)
+project(power_node)
 
 include_directories(    
                         
@@ -19,6 +19,6 @@ include_directories(
 
 target_sources(app PRIVATE 
                     src/main.c
-                    ../oslib/ble_driver/ble_proxy.c
+                    ../oslib/ble_driver/ble_power.c
                     )
 

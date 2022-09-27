@@ -9,22 +9,26 @@
 #include <zephyr.h>
 #include <sys/printk.h>
 
-#include "ble_proxy.h"
+#include "ble_power.h"
 
 
 void main(void) {
 
-	printk("esp32 start! -- proxy node\n");
+	printk("esp32 start!\n");
 	int err = bt_enable(bt_ready);
 	if (err) {
 		printk("bt_enable failed with err %d", err);
 	}
-	
+	printk("bonjour\n");
+	const char* btName = bt_get_name();
+
 	// bt_mesh_reset();
 
 	while (1) {
 		if (bt_mesh_is_provisioned()) {
-			
+			printk("hello friendo\n");
+			send_data_to_proxy(BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK);
+			printk("proxy data sent\n");
 		}
 		k_msleep(2000);
 	}
