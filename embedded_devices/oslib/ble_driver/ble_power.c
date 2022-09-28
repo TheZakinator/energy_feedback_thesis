@@ -16,7 +16,7 @@ int8_t dataNodeToProxy[5] = {
 	0x10,
 	0x20,
 	0x30,
-	0x40
+	0x40,
 };
 
 // ======================== Miscellaneous ============================================//
@@ -136,8 +136,8 @@ static void generic_onoff_set(struct bt_mesh_model *model, struct bt_mesh_msg_ct
 
 // ======================== Generic model definitions ============================================//
 
-// 10 bytes + 1
-BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 11);
+// 10 bytes + 1 ?
+BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 5);
 
 
 // static const struct bt_mesh_model_op generic_onoff_op[] = {
@@ -187,11 +187,9 @@ int send_data_to_proxy(uint16_t message_type) {
 	struct net_buf_simple* msg = model->pub->msg;
 	bt_mesh_model_msg_init(msg, message_type);
 
-	net_buf_simple_add_u8(msg, dataNodeToProxy[0]);
-	net_buf_simple_add_u8(msg, dataNodeToProxy[1]);
-	net_buf_simple_add_u8(msg, dataNodeToProxy[2]);
-	net_buf_simple_add_u8(msg, dataNodeToProxy[3]);
-	net_buf_simple_add_u8(msg, dataNodeToProxy[4]);
+	for (int i = 0; i < 5; i++) {
+		net_buf_simple_add_u8(msg, dataNodeToProxy[i]);
+	}
 
 	printk("publishing Node to Proxy data\n");
 	err = bt_mesh_model_publish(model);

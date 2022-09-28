@@ -1,3 +1,5 @@
+#include <zephyr.h>
+
 #include <stdlib.h>
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/hci.h>
@@ -6,10 +8,149 @@
 #include <bluetooth/mesh.h>
 #include <random/rand32.h>
 
-#include <zephyr.h>
+#include <init.h>
+#include <sys/util.h>
+
+#include <device.h>
+#include <devicetree.h>
+
+#include <bluetooth/conn.h>
+#include <bluetooth/uuid.h>
+#include <bluetooth/gatt.h>
+#include <sys/byteorder.h>
 #include <sys/printk.h>
 
 #include "ble_proxy.h"
+
+// ==========================================================
+// GATT Characteristics --- Proxy to Watch Connection
+// ==========================================================
+
+struct bt_conn* default_conn;
+bool ble_connected = false;
+
+/* Custom Service Variables */
+static struct bt_uuid_128 watch_uuid = BT_UUID_INIT_128(
+    0xd0, 0x92, 0x67, 0x35, 0x78, 0x16, 0x21, 0x91,
+    0x26, 0x49, 0x60, 0xeb, 0x06, 0xa7, 0xca, 0xcb);
+
+static struct bt_uuid_128 proxy_uuid = BT_UUID_INIT_128(
+    0xd1, 0x92, 0x67, 0x35, 0x78, 0x16, 0x21, 0x91,
+    0x26, 0x49, 0x60, 0xeb, 0x06, 0xa7, 0xca, 0xcb);
+
+struct packet_response {
+    int16_t tempData1;
+    int16_t tempData2;
+	int16_t tempData3;
+};
+
+int16_t data_request[3];
+struct packet_response packetResponse;
+
+struct packet_response allSensorData; // ?????
+
+static ssize_t write_chrc(struct bt_conn *conn,
+			       const struct bt_gatt_attr *attr,
+			       const void *buf, uint16_t len,
+			       uint16_t offset, uint8_t flags)
+{
+	printk("chrc len %u offset %u\n", len, offset);
+    // struct bt_gatt_chrc* chrc = (struct bt_gatt_chrc*) attr->user_data;
+    // chrc_handle = chrc->value_handle;
+	memcpy(data_request, buf, len);
+
+	printk("\nOne: %d\n", data_request[0]);
+    printk("ID: %d\n", data_request[1]);
+    printk("value: %d\n", data_request[2]);
+	return len;
+}
+
+static ssize_t read_chrc(struct bt_conn* conn, 
+                const struct bt_gatt_attr* attr,
+                void* buf, uint16_t len, uint16_t offset) {
+
+    printk("read request received\n");
+
+    return bt_gatt_attr_read(conn, attr, buf, len, offset, 
+                        (void*) &data_request, sizeof(data_request));               
+}
+
+BT_GATT_SERVICE_DEFINE(proxy_svc,
+                    BT_GATT_PRIMARY_SERVICE(&proxy_uuid),
+
+                    BT_GATT_CHARACTERISTIC(&watch_uuid.uuid,
+                                            BT_GATT_CHRC_WRITE | BT_GATT_CHRC_READ,
+                                            BT_GATT_PERM_WRITE | BT_GATT_PERM_READ,
+                                            read_chrc, write_chrc, NULL)
+                    );
+
+static void connected(struct bt_conn *conn, uint8_t err)
+{
+    if (err)
+    {
+        printk("Connection failed (err 0x%02x)\n", err);
+        ble_connected= false;
+    }
+    else
+    {
+        printk("BLE Connected to Device\n");
+        ble_connected= true;
+        struct bt_le_conn_param *param = BT_LE_CONN_PARAM(6, 6, 0, 400);
+
+        default_conn = conn;
+
+        if (bt_conn_le_param_update(conn, param) < 0)
+        {
+			printk("i be stuck sadge\n");
+            // while (1)
+            // {
+            //     printk("Connection Update Error\n");
+            //     k_msleep(10);
+            // }
+        }
+    }
+}
+
+static void disconnected(struct bt_conn *conn, uint8_t reason)
+{
+    printk("Disconnected (reason 0x%02x)\n", reason);
+    ble_connected= false;
+}
+
+static void auth_passkey_display(struct bt_conn *conn, unsigned int passkey)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+
+    printk("Passkey for %s: %06u\n", addr, passkey);
+}
+
+static void auth_cancel(struct bt_conn *conn)
+{
+    char addr[BT_ADDR_LE_STR_LEN];
+
+    bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
+
+    printk("Pairing cancelled: %s\n", addr);
+}
+
+static struct bt_conn_cb conn_callbacks = {
+    .connected = connected,
+    .disconnected = disconnected,
+};
+
+static struct bt_conn_auth_cb auth_cb_display = {
+    .passkey_display = auth_passkey_display,
+    .passkey_entry = NULL,
+    .cancel = auth_cancel,
+};
+
+// external function
+void register_callbacks() {
+	// bt_conn_cb_register(&conn_callbacks);
+    // bt_conn_auth_cb_register(&auth_cb_display);
+}
 
 int8_t dataNodeToProxy[5] = {
 	0x00,
@@ -138,7 +279,7 @@ static void generic_onoff_set(struct bt_mesh_model *model, struct bt_mesh_msg_ct
 // ======================== Generic model definitions ============================================//
 
 // 10 bytes + 1
-BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 11);
+BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 5);
 
 
 // static const struct bt_mesh_model_op generic_onoff_op[] = {
@@ -152,11 +293,11 @@ BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 11);
 // BT_MESH_MODEL_PUB_DEFINE(generic_onoff_pub, NULL, 2 + 1);
 
 static const struct bt_mesh_model_op data_from_power_node_op[] = {
-    {BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, 10, get_data_from_power_node},
+    {BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, 5, get_data_from_power_node},
     BT_MESH_MODEL_OP_END,
 };
 
-BT_MESH_MODEL_PUB_DEFINE(data_from_power_node_pub, NULL, 11);
+BT_MESH_MODEL_PUB_DEFINE(data_from_power_node_pub, NULL, 5);
 
 static struct bt_mesh_model sig_models[] = {
     // BT_MESH_MODEL_CFG_SRV,

@@ -14,7 +14,7 @@
 
 void main(void) {
 
-	printk("esp32 start!\n");
+	printk("esp32 start! -- power node\n");
 	int err = bt_enable(bt_ready);
 	if (err) {
 		printk("bt_enable failed with err %d", err);
@@ -30,6 +30,6 @@ void main(void) {
 			send_data_to_proxy(BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK);
 			printk("proxy data sent\n");
 		}
-		k_msleep(2000);
+		k_msleep(5000);
 	}
 }

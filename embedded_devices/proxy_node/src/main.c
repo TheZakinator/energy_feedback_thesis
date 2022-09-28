@@ -5,6 +5,7 @@
 #include <drivers/gpio.h>
 #include <bluetooth/mesh.h>
 #include <random/rand32.h>
+#include <bluetooth/conn.h>
 
 #include <zephyr.h>
 #include <sys/printk.h>
@@ -19,6 +20,8 @@ void main(void) {
 	if (err) {
 		printk("bt_enable failed with err %d", err);
 	}
+
+	register_callbacks();
 	
 	// bt_mesh_reset();
 
