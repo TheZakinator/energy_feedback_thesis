@@ -11,4 +11,8 @@ void get_data_from_power_node(struct bt_mesh_model* model, struct bt_mesh_msg_ct
 
 void register_callbacks();
 
+void init_node_data();
+
+void change_data_intermittently();
+
 #endif

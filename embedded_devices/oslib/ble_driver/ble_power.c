@@ -11,6 +11,8 @@
 
 #include "ble_power.h"
 
+PowerNodeData_t powerNodeData;
+
 int8_t dataNodeToProxy[5] = {
 	0x00,
 	0x10,
@@ -135,9 +137,8 @@ static void generic_onoff_set(struct bt_mesh_model *model, struct bt_mesh_msg_ct
 */
 
 // ======================== Generic model definitions ============================================//
-
-// 10 bytes + 1 ?
-BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 5);
+// 1 + 1 + 4 (size of PowerNodeData_t struct)
+BT_MESH_MODEL_PUB_DEFINE(powerNodeDataModel, NULL, 7);
 
 
 // static const struct bt_mesh_model_op generic_onoff_op[] = {
@@ -155,7 +156,7 @@ static struct bt_mesh_model sig_models[] = {
     // BT_MESH_MODEL_CFG_SRV,
 	BT_MESH_MODEL_CFG_SRV,
 	BT_MESH_MODEL_HEALTH_SRV(&health_srv, &health_pub),
-	BT_MESH_MODEL(BT_MESH_MODEL_ID_LIGHT_XYL_CLI, NULL, &data_node_to_proxy, &dataNodeToProxy),
+	BT_MESH_MODEL(BT_MESH_MODEL_ID_LIGHT_XYL_CLI, NULL, &powerNodeDataModel, &powerNodeData),
 	//BT_MESH_MODEL(BT_MESH_MODEL_ID_GEN_ONOFF_SRV, generic_onoff_op, &generic_onoff_pub, NULL),
 };
 
@@ -174,8 +175,11 @@ static const struct bt_mesh_comp comp = {
 
 // ======================== Externally Used Functions ============================================//
 
-int send_data_to_proxy(uint16_t message_type) {
+int send_data_to_proxy(uint16_t messageType, PowerNodeData_t* data) {
 	int err;
+
+	memcpy(&powerNodeData, data, sizeof(powerNodeData));
+
 	struct bt_mesh_model* model = &sig_models[2];
 	printk("sending data to proxy...\n");
 	if (model->pub->addr == BT_MESH_ADDR_UNASSIGNED) {
@@ -185,19 +189,20 @@ int send_data_to_proxy(uint16_t message_type) {
 	}
 
 	struct net_buf_simple* msg = model->pub->msg;
-	bt_mesh_model_msg_init(msg, message_type);
+	bt_mesh_model_msg_init(msg, messageType);
 
-	for (int i = 0; i < 5; i++) {
-		net_buf_simple_add_u8(msg, dataNodeToProxy[i]);
-	}
+	net_buf_simple_add_u8(msg, powerNodeData.applianceOn);
+	net_buf_simple_add_u8(msg, powerNodeData.hysterisisLevel);
+	net_buf_simple_add_u8(msg, powerNodeData.nodeNum);
+	net_buf_simple_add_le32(msg, powerNodeData.voltageVal);	
 
-	printk("publishing Node to Proxy data\n");
+	printk("publishing data from power node to proxy node\n");
 	err = bt_mesh_model_publish(model);
 	if (err) {
 		printk("bt_mesh_model_publish err %d\n", err);
 	}
-	return err;
 
+	return err;
 }
 
 void bt_ready(int err) {

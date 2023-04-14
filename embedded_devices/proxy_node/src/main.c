@@ -22,13 +22,19 @@ void main(void) {
 	}
 
 	register_callbacks();
+
+	init_node_data();
 	
 	// bt_mesh_reset();
 
 	while (1) {
 		if (bt_mesh_is_provisioned()) {
-			
+
 		}
+
+		change_data_intermittently();
+
+		printk("bonjourno");
 		k_msleep(2000);
 	}
 }

@@ -22,6 +22,49 @@
 
 #include "ble_proxy.h"
 
+// initialises semaphore for data which goes between GATT and BLE mesh threads
+K_SEM_DEFINE(power_data_sem, 1, 1);
+
+typedef struct {
+    uint8_t applianceOn;
+    uint8_t hysterisisLevel;
+    uint8_t nodeNum;
+    uint32_t voltageVal;
+} PowerNodeData_t;
+
+PowerNodeData_t powerNodeData[3];
+PowerNodeData_t savedNodeData[3];
+
+int sendingNode = 0; // power node data currently being notified
+
+// initialise node data to 0 and wait indefinitely for semaphore
+void init_node_data() {
+
+    printk("\ninitialise data semaphore TAKE\n");
+
+    if (k_sem_take(&power_data_sem, K_FOREVER) != 0) {
+        printk("ERROR: Could not take semepahore : init_node_data\n");
+    } else {
+
+        for (int i = 0; i < 3; i++) {
+            powerNodeData[i].applianceOn = i*1;
+            powerNodeData[i].hysterisisLevel = i*5;
+            powerNodeData[i].nodeNum = i;
+            powerNodeData[i].voltageVal = (i+1) * 140000000;
+
+            savedNodeData[i].applianceOn = i*1;
+            savedNodeData[i].hysterisisLevel = i*5;
+            savedNodeData[i].nodeNum = i;
+            savedNodeData[i].voltageVal = (i+1) * 140000000;
+
+        }
+
+        k_sem_give(&power_data_sem);
+    }
+
+    printk("\ninitialised data semaphore RETURN\n");
+}
+
 // ==========================================================
 // GATT Characteristics --- Proxy to Watch Connection
 // ==========================================================
@@ -38,32 +81,23 @@ static struct bt_uuid_128 proxy_uuid = BT_UUID_INIT_128(
     0xd1, 0x92, 0x67, 0x35, 0x78, 0x16, 0x21, 0x91,
     0x26, 0x49, 0x60, 0xeb, 0x06, 0xa7, 0xca, 0xcb);
 
-struct packet_response {
-    int16_t tempData1;
-    int16_t tempData2;
-	int16_t tempData3;
-};
+// int16_t data_request[3];
 
-int16_t data_request[3];
-struct packet_response packetResponse;
+// static ssize_t write_chrc(struct bt_conn *conn,
+// 			       const struct bt_gatt_attr *attr,
+// 			       const void *buf, uint16_t len,
+// 			       uint16_t offset, uint8_t flags)
+// {
+// 	printk("chrc len %u offset %u\n", len, offset);
+//     // struct bt_gatt_chrc* chrc = (struct bt_gatt_chrc*) attr->user_data;
+//     // chrc_handle = chrc->value_handle;
+// 	memcpy(data_request, buf, len);
 
-struct packet_response allSensorData; // ?????
-
-static ssize_t write_chrc(struct bt_conn *conn,
-			       const struct bt_gatt_attr *attr,
-			       const void *buf, uint16_t len,
-			       uint16_t offset, uint8_t flags)
-{
-	printk("chrc len %u offset %u\n", len, offset);
-    // struct bt_gatt_chrc* chrc = (struct bt_gatt_chrc*) attr->user_data;
-    // chrc_handle = chrc->value_handle;
-	memcpy(data_request, buf, len);
-
-	printk("\nOne: %d\n", data_request[0]);
-    printk("ID: %d\n", data_request[1]);
-    printk("value: %d\n", data_request[2]);
-	return len;
-}
+// 	printk("\nOne: %d\n", data_request[0]);
+//     printk("ID: %d\n", data_request[1]);
+//     printk("value: %d\n", data_request[2]);
+// 	return len;
+// }
 
 static ssize_t read_chrc(struct bt_conn* conn, 
                 const struct bt_gatt_attr* attr,
@@ -71,18 +105,136 @@ static ssize_t read_chrc(struct bt_conn* conn,
 
     printk("read request received\n");
 
+    // copy all savedData and transmit it. If semaphore cannot be 
+    // acquired, send old data instead.
+    if (k_sem_take(&power_data_sem, K_MSEC(100)) != 0) {
+        printk("ERROR: Could not take semepahore : read_chrc\n");
+    } else {
+        memcpy(&savedNodeData[0], &powerNodeData[0], sizeof(savedNodeData[0]));
+        k_sem_give(&power_data_sem);
+    }
+
+
     return bt_gatt_attr_read(conn, attr, buf, len, offset, 
-                        (void*) &data_request, sizeof(data_request));               
+                        (void*) &savedNodeData[0], sizeof(savedNodeData[0]));               
+}
+
+// static void notify_func(struct bt_conn* conn, 
+//                 const struct bt_gatt_attr* attr,
+//                 uint16_t value) 
+// {
+
+// }
+
+// static struct bt_uuid_128 proxy_desc = BT_UUID_INIT_128(
+//     0x00, 0x00, 0x00, 0x00,
+//     0x00, 0x00, 0x00, 0x00,
+//     0x00, 0x00, 0x00, 0x00,
+//     0x00, 0x00, 0x00, 0x00);
+
+static struct bt_uuid_128 proxy_desc = BT_UUID_INIT_128(
+0xfb, 0x34, 0x9b, 0x5f, 0x80, 0x00, 0x00, 0x80, 
+0x00, 0x10, 0x00, 0x00, 0x02, 0x29, 0x00, 0x00);
+
+
+static bool en_notification;
+
+static void proxy_ccc_cfg_changed(const struct bt_gatt_attr *attr,
+				 uint16_t value)
+{
+	en_notification = value == BT_GATT_CCC_NOTIFY;
+    printk("proxy_ccc_cfg_changed: %d\n", value);
+}
+
+uint16_t proxy_desc_val = 0x0000;
+
+static ssize_t read_proxy_desc(struct bt_conn *conn,
+				   const struct bt_gatt_attr *attr, void *buf,
+				   uint16_t len, uint16_t offset)
+{
+
+    printk("read_proxy_desc\n");
+    printk("len: %d\n", len);
+
+	return bt_gatt_attr_read(conn, attr, buf, len, offset, (void*) &proxy_desc_val,
+				 sizeof(proxy_desc_val));
+}
+
+static ssize_t write_proxy_ccc(struct bt_conn* conn, 
+                    const struct bt_gatt_attr* attr, const void* buf, 
+                    uint16_t len, uint16_t offset, uint8_t flags) 
+{
+    const uint16_t value = *(uint16_t *)buf;
+
+    if (len != sizeof(value)) {
+        return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+    }
+
+    en_notification = value == BT_GATT_CCC_NOTIFY;
+    printk("proxy_ccc_cfg_changed: %d\n", value);
+
+    return len;
+
 }
 
 BT_GATT_SERVICE_DEFINE(proxy_svc,
+
                     BT_GATT_PRIMARY_SERVICE(&proxy_uuid),
 
                     BT_GATT_CHARACTERISTIC(&watch_uuid.uuid,
-                                            BT_GATT_CHRC_WRITE | BT_GATT_CHRC_READ,
-                                            BT_GATT_PERM_WRITE | BT_GATT_PERM_READ,
-                                            read_chrc, write_chrc, NULL)
+                                            BT_GATT_CHRC_READ | BT_GATT_CHRC_NOTIFY,
+                                            BT_GATT_PERM_READ,
+                                            read_chrc, NULL, &powerNodeData[0]),
+
+                    BT_GATT_DESCRIPTOR(BT_UUID_GATT_CCC, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE,
+                                            NULL, write_proxy_ccc, &proxy_desc_val)                
                     );
+
+
+void change_data_intermittently() {
+
+    int notify_result;
+
+    if (k_sem_take(&power_data_sem, K_MSEC(100)) != 0) {
+        printk("ERROR: Could not take semepahore : change_data\n");
+    } else {
+        memcpy(&savedNodeData[sendingNode], &powerNodeData[sendingNode], sizeof(savedNodeData[0]));
+
+        // check if remote GATT client has enabled notifications
+        if (en_notification) {
+            printk("notifying...\n");
+            notify_result = bt_gatt_notify(default_conn, &proxy_svc.attrs[2], 
+                &powerNodeData[sendingNode], sizeof(powerNodeData[sendingNode]));
+            
+            if (notify_result < 0) {
+                printk("Notification error: %d\n", notify_result);
+            } else {
+                printk("Notification sent\n");
+            }
+        }
+
+        // cycle through connected power nodes
+        sendingNode++;
+        if (sendingNode == 3) {
+            sendingNode = 0;
+        }
+
+        k_sem_give(&power_data_sem);
+    }    
+
+    // // check if remote GATT client has enabled notifications
+    // if (en_notification) {
+    //     printk("notifying...\n");
+    //     notify_result = bt_gatt_notify(default_conn, &proxy_svc.attrs[2], 
+    //         &powerNodeData[0], sizeof(powerNodeData[0]));
+        
+    //     if (notify_result < 0) {
+    //         printk("Notification error: %d\n", notify_result);
+    //     } else {
+    //         printk("Notification sent\n");
+    //     }
+    // }
+}
 
 static void connected(struct bt_conn *conn, uint8_t err)
 {
@@ -95,13 +247,13 @@ static void connected(struct bt_conn *conn, uint8_t err)
     {
         printk("BLE Connected to Device\n");
         ble_connected= true;
-        struct bt_le_conn_param *param = BT_LE_CONN_PARAM(6, 6, 0, 400);
+        struct bt_le_conn_param *param = BT_LE_CONN_PARAM(20, 200, 0, 400);
 
         default_conn = conn;
-
+ 
         if (bt_conn_le_param_update(conn, param) < 0)
         {
-			printk("i be stuck sadge\n");
+			printk("ERROR - connected() - should not reach here\n");
             // while (1)
             // {
             //     printk("Connection Update Error\n");
@@ -114,7 +266,8 @@ static void connected(struct bt_conn *conn, uint8_t err)
 static void disconnected(struct bt_conn *conn, uint8_t reason)
 {
     printk("Disconnected (reason 0x%02x)\n", reason);
-    ble_connected= false;
+    en_notification = false; // reset notifications
+    ble_connected= false; // reset connected status
 }
 
 static void auth_passkey_display(struct bt_conn *conn, unsigned int passkey)
@@ -148,17 +301,9 @@ static struct bt_conn_auth_cb auth_cb_display = {
 
 // external function
 void register_callbacks() {
-	// bt_conn_cb_register(&conn_callbacks);
+	bt_conn_cb_register(&conn_callbacks);
     // bt_conn_auth_cb_register(&auth_cb_display);
 }
-
-int8_t dataNodeToProxy[5] = {
-	0x00,
-	0x10,
-	0x20,
-	0x30,
-	0x40
-};
 
 // ======================== Miscellaneous ============================================//
 static void attention_on(struct bt_mesh_model *model) { printk("attention_on()\n"); }
@@ -166,7 +311,7 @@ static void attention_on(struct bt_mesh_model *model) { printk("attention_on()\n
 static void attention_off(struct bt_mesh_model *model) { printk("attention_off()\n"); }
 
 // device UUID
-static uint8_t dev_uuid[16] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00 };
+static uint8_t dev_uuid[16] = { 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08,0x09, 0x10, 0x11, 0x12,0x13, 0x14, 0x15, 0x16 };
 
 void gen_uuid() {
     uint32_t rnd1 = sys_rand32_get();
@@ -293,11 +438,11 @@ BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 5);
 // BT_MESH_MODEL_PUB_DEFINE(generic_onoff_pub, NULL, 2 + 1);
 
 static const struct bt_mesh_model_op data_from_power_node_op[] = {
-    {BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, 5, get_data_from_power_node},
+    {BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, 7, get_data_from_power_node},
     BT_MESH_MODEL_OP_END,
 };
 
-BT_MESH_MODEL_PUB_DEFINE(data_from_power_node_pub, NULL, 5);
+BT_MESH_MODEL_PUB_DEFINE(data_from_power_node_pub, NULL, 7);
 
 static struct bt_mesh_model sig_models[] = {
     // BT_MESH_MODEL_CFG_SRV,
@@ -320,19 +465,43 @@ static const struct bt_mesh_comp comp = {
 };
 
 
-
-
 // ======================== Externally Used Functions ============================================//
 
 void get_data_from_power_node(struct bt_mesh_model* model, struct bt_mesh_msg_ctx* ctx, struct net_buf_simple* buf) {
 
-    int8_t recMsg[5];
+    PowerNodeData_t tempData;
 
-    for (int i = 0; i < 5; i++) {
-        recMsg[i] = net_buf_simple_pull_u8(buf);
-        printk("received[%d]: %d\n", i, recMsg[i]);
+    tempData.applianceOn = net_buf_simple_pull_u8(buf);
+    tempData.hysterisisLevel = net_buf_simple_pull_u8(buf);
+    tempData.nodeNum = net_buf_simple_pull_u8(buf);
+
+    tempData.voltageVal = net_buf_simple_pull_le32(buf);
+
+    // printk("received power node data: \n");
+    // printk("applianceOn: %u\n", tempData.applianceOn);
+    // printk("hysterisisLevel: %u\n", tempData.hysterisisLevel);
+    // printk("nodeNum: %u\n", tempData.nodeNum);
+    // printk("voltageVal: %u\n", tempData.voltageVal);
+
+    if (k_sem_take(&power_data_sem, K_MSEC(50)) != 0) {
+        printk("ERROR: Could not take semepahore : get_data_from_power_node\n");
+    } else {
+        // copy one instance of PowerNodeData_t with size of one instance
+        memcpy(&powerNodeData[tempData.nodeNum], &tempData, sizeof(powerNodeData[0]));
+
+        for (int i = 0; i < 3; i++) {
+            
+            printk("\nreceived power node data: \n");
+            printk("    applianceOn[%d] : %u\n", i, powerNodeData[i].applianceOn);
+            printk("hysterisisLevel[%d] : %u\n", i, powerNodeData[i].hysterisisLevel);
+            printk("        nodeNum[%d] : %u\n", i, powerNodeData[i].nodeNum);
+            printk("     voltageVal[%d] : %u\n", i, powerNodeData[i].voltageVal);
+        }
+        k_sem_give(&power_data_sem);
     }
+
 }
+
 
 void bt_ready(int err) {
 
@@ -370,6 +539,3 @@ void bt_ready(int err) {
 	    printk("Node unicast address: 0x%04x\n",elements[0].addr);
 	}
 }
-
-
-
