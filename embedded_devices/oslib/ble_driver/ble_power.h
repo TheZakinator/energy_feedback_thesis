@@ -10,6 +10,8 @@
 
 void bt_ready(int err);
 
+void handle_self_data(struct bt_mesh_model* model, struct bt_mesh_msg_ctx* ctx, struct net_buf_simple* buf);
+
 int send_data_to_proxy(uint16_t messageType, PowerNodeData_t* powerNodeData);
 
 

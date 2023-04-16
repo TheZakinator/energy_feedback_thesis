@@ -10,6 +10,7 @@
 #include <sys/printk.h>
 
 #include "ble_power.h"
+#include "main.h"
 
 PowerNodeData_t powerNodeData;
 
@@ -138,18 +139,9 @@ static void generic_onoff_set(struct bt_mesh_model *model, struct bt_mesh_msg_ct
 
 // ======================== Generic model definitions ============================================//
 // 1 + 1 + 4 (size of PowerNodeData_t struct)
+// 
 BT_MESH_MODEL_PUB_DEFINE(powerNodeDataModel, NULL, 7);
 
-
-// static const struct bt_mesh_model_op generic_onoff_op[] = {
-// 		{BT_MESH_MODEL_OP_GENERIC_ONOFF_GET, 0, generic_onoff_get},
-// 		{BT_MESH_MODEL_OP_GENERIC_ONOFF_SET, 2, generic_onoff_set},
-// 		{BT_MESH_MODEL_OP_GENERIC_ONOFF_SET_UNACK, 2, generic_onoff_set_unack},
-// 		BT_MESH_MODEL_OP_END,
-// };
-
-// model publication context
-// BT_MESH_MODEL_PUB_DEFINE(generic_onoff_pub, NULL, 2 + 1);
 
 
 static struct bt_mesh_model sig_models[] = {
@@ -180,6 +172,12 @@ int send_data_to_proxy(uint16_t messageType, PowerNodeData_t* data) {
 
 	memcpy(&powerNodeData, data, sizeof(powerNodeData));
 
+	printk("applianceOn: %d\n", powerNodeData.applianceOn);
+	printk("hysterisisLevel: %d\n", powerNodeData.hysterisisLevel);
+	printk("nodeNum: %d\n", powerNodeData.nodeNum);
+	printk("voltageVal: %d\n", powerNodeData.voltageVal);
+
+
 	struct bt_mesh_model* model = &sig_models[2];
 	printk("sending data to proxy...\n");
 	if (model->pub->addr == BT_MESH_ADDR_UNASSIGNED) {
@@ -190,6 +188,10 @@ int send_data_to_proxy(uint16_t messageType, PowerNodeData_t* data) {
 
 	struct net_buf_simple* msg = model->pub->msg;
 	bt_mesh_model_msg_init(msg, messageType);
+
+	// for (int i = 0; i < 5; i++) {
+	// 	net_buf_simple_add_u8(msg, dataNodeToProxy[i]);
+	// }
 
 	net_buf_simple_add_u8(msg, powerNodeData.applianceOn);
 	net_buf_simple_add_u8(msg, powerNodeData.hysterisisLevel);
@@ -203,7 +205,7 @@ int send_data_to_proxy(uint16_t messageType, PowerNodeData_t* data) {
 	}
 
 	return err;
-}
+}		
 
 void bt_ready(int err) {
 

@@ -190,7 +190,6 @@ BT_GATT_SERVICE_DEFINE(proxy_svc,
                                             NULL, write_proxy_ccc, &proxy_desc_val)                
                     );
 
-
 void change_data_intermittently() {
 
     int notify_result;
@@ -355,11 +354,6 @@ void gen_uuid() {
 // data receive from power node
 #define BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK		BT_MESH_MODEL_OP_2(0x82, 0x40)
 
-// #define BT_MESH_MODEL_OP_GENERIC_ONOFF_GET BT_MESH_MODEL_OP_2(0x82, 0x01)
-// #define BT_MESH_MODEL_OP_GENERIC_ONOFF_SET BT_MESH_MODEL_OP_2(0x82, 0x02)
-// #define BT_MESH_MODEL_OP_GENERIC_ONOFF_SET_UNACK BT_MESH_MODEL_OP_2(0x82, 0x03)
-// #define BT_MESH_MODEL_OP_GENERIC_ONOFF_STATUS BT_MESH_MODEL_OP_2(0x82, 0x04)
-
 // ======================== Health Models ============================================//
 
 static const struct bt_mesh_health_srv_cb health_srv_cb = {
@@ -400,42 +394,10 @@ static const struct bt_mesh_prov prov = {
 };
 
 
-// ======================== Generic Function Callbacks ============================================//
-
-/*
-static void generic_onoff_set_unack(struct bt_mesh_model *model, struct bt_mesh_msg_ctx *ctx, 
-			struct net_buf_simple *buf)
-{
-	// do things here :)
-}
-
-static void generic_onoff_get(struct bt_mesh_model *model, struct bt_mesh_msg_ctx *ctx, struct net_buf_simple *buf)
-{
-	// do more things here :)
-}
-
-static void generic_onoff_set(struct bt_mesh_model *model, struct bt_mesh_msg_ctx *ctx,	
-			struct net_buf_simple *buf)
-{
-	// even more things :)
-}
-*/
-
 // ======================== Generic model definitions ============================================//
 
 // 10 bytes + 1
 BT_MESH_MODEL_PUB_DEFINE(data_node_to_proxy, NULL, 5);
-
-
-// static const struct bt_mesh_model_op generic_onoff_op[] = {
-// 		{BT_MESH_MODEL_OP_GENERIC_ONOFF_GET, 0, generic_onoff_get},
-// 		{BT_MESH_MODEL_OP_GENERIC_ONOFF_SET, 2, generic_onoff_set},
-// 		{BT_MESH_MODEL_OP_GENERIC_ONOFF_SET_UNACK, 2, generic_onoff_set_unack},
-// 		BT_MESH_MODEL_OP_END,
-// };
-
-// model publication context
-// BT_MESH_MODEL_PUB_DEFINE(generic_onoff_pub, NULL, 2 + 1);
 
 static const struct bt_mesh_model_op data_from_power_node_op[] = {
     {BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, 7, get_data_from_power_node},
@@ -471,17 +433,13 @@ void get_data_from_power_node(struct bt_mesh_model* model, struct bt_mesh_msg_ct
 
     PowerNodeData_t tempData;
 
+    printk("get data from power node\n");
+
     tempData.applianceOn = net_buf_simple_pull_u8(buf);
     tempData.hysterisisLevel = net_buf_simple_pull_u8(buf);
     tempData.nodeNum = net_buf_simple_pull_u8(buf);
 
     tempData.voltageVal = net_buf_simple_pull_le32(buf);
-
-    // printk("received power node data: \n");
-    // printk("applianceOn: %u\n", tempData.applianceOn);
-    // printk("hysterisisLevel: %u\n", tempData.hysterisisLevel);
-    // printk("nodeNum: %u\n", tempData.nodeNum);
-    // printk("voltageVal: %u\n", tempData.voltageVal);
 
     if (k_sem_take(&power_data_sem, K_MSEC(50)) != 0) {
         printk("ERROR: Could not take semepahore : get_data_from_power_node\n");

@@ -35,6 +35,10 @@ static gpio_callback_handler_t button_pressed(struct device *dev, struct gpio_ca
 	if (currentTime - lastIntTime >= DEBOUNCE_DELAY_MS) {
 		const struct device* gpio_dev = device_get_binding(GPIO0_PORT);
 		if (gpio_dev != NULL) {
+			powerNodeState += 1;
+			if (powerNodeState == 4) {
+				powerNodeState = 0;
+			}
 			if (powerNodeState == 0) {
 				printk("state 0\n");
 				gpio_pin_set(gpio_dev, RED_LED_PIN, 0);
@@ -57,12 +61,7 @@ static gpio_callback_handler_t button_pressed(struct device *dev, struct gpio_ca
 				gpio_pin_set(gpio_dev, GREEN_LED_PIN, 1);
 			}
 		}
-		powerNodeState += 1;
-		if (powerNodeState == 4) {
-			powerNodeState = 0;
-		}
 	}
-
 	lastIntTime = currentTime;
 }
 
@@ -83,6 +82,8 @@ void get_dummy_data(const char* deviceName, PowerNodeData_t* powerNodeData, int 
 
 	powerNodeData->applianceOn = 1;
 	powerNodeData->hysterisisLevel = 1;
+
+	printk("device name: %s\n", deviceName);
 
 	if (!strcmp(deviceName, "PWR_NODE_AIRCON")) {
 		powerNodeData->nodeNum = 0;
@@ -134,27 +135,29 @@ void main(void) {
 
 	}
 
-	// bt_mesh_reset(); -- uncomment to unprovision device
+	// bt_mesh_reset(); //-- uncomment to unprovision device
 
+	int64_t time = k_uptime_get();
 	while (1) {
+
 		if (bt_mesh_is_provisioned()) {
+				// printk("1 received power node data: \n");
+				// printk("1 applianceOn: %u\n", powerNodeData.applianceOn);
+				// printk("1 hysterisisLevel: %u\n", powerNodeData.hysterisisLevel);
+				// printk("1 nodeNum: %u\n", powerNodeData.nodeNum);
+				// printk("1 voltageVal: %u\n", powerNodeData.voltageVal);
 
-			// printk("1 received power node data: \n");
-			// printk("1 applianceOn: %u\n", powerNodeData.applianceOn);
-			// printk("1 hysterisisLevel: %u\n", powerNodeData.hysterisisLevel);
-			// printk("1 nodeNum: %u\n", powerNodeData.nodeNum);
-			// printk("1 voltageVal: %u\n", powerNodeData.voltageVal);
+				get_dummy_data(btName, &powerNodeData, powerNodeState);
 
-			get_dummy_data(btName, &powerNodeData, powerNodeState);
-
-			// indicates that the device has disconnected and shouldnt be sending any data
-			if (powerNodeState != 0) {
-				send_data_to_proxy(BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, &powerNodeData);
+				// indicates that the device has disconnected and shouldnt be sending any data
+				if (powerNodeState != 0) {
+					send_data_to_proxy(BT_MESH_MODEL_OP_NODE_TO_PROXY_UNACK, &powerNodeData);
+					printk("proxy data sent, nodeState: %d\n", powerNodeState);
+				} else {
+					printk("sending disabled, nodeState: %d\n", powerNodeState);
+				}
+			
 			}
-
-			printk("proxy data sent\n");
-		}
-
 		k_msleep(5000);
 	}
 }
