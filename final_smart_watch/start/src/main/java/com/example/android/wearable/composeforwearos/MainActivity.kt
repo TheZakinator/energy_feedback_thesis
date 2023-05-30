@@ -47,24 +47,10 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.util.*
 
-/**
- * This code lab is meant to help existing Compose developers get up to speed quickly on
- * Compose for Wear OS.
- *
- * The code lab walks through a majority of the simple composables for Wear OS (both similar to
- * existing mobile composables and new composables).
- *
- * It also covers more advanced composables like [ScalingLazyColumn] (Wear OS's version of
- * [LazyColumn]) and the Wear OS version of [Scaffold].
- *
- * Check out [this link](https://android-developers.googleblog.com/2021/10/compose-for-wear-os-now-in-developer.html)
- * for more information on Compose for Wear OS.
- */
 class MainActivity : ComponentActivity() {
 
     private lateinit var bluetoothScanService : BluetoothScanService
     private var isBluetoothBound = false
-//    private var nodeDataList = MutableList<ProxyNodeData?>(3) {null}
     private var nodeDataListState = mutableStateOf<List<ProxyNodeData?>>(listOf(null, null, null))
 
     private val bluetoothServiceConnection = object : ServiceConnection {
@@ -114,10 +100,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-//    override fun onStop() {
-//        super.onStop()
-//
-//    }
     override fun onDestroy() {
         super.onDestroy()
         if (isBluetoothBound) {
@@ -154,7 +136,6 @@ fun WearApp(nodeDataListState: MutableState<List<ProxyNodeData?>>) {
 
         LaunchedEffect(applianceOnValues) {}
 
-        /* *************************** Part 4: Wear OS Scaffold *************************** */
         Scaffold(
             timeText = {
                 TimeText(modifier = Modifier.scrollAway(listState))
@@ -170,7 +151,6 @@ fun WearApp(nodeDataListState: MutableState<List<ProxyNodeData?>>) {
                 )
             }
         ) {
-            // Modifiers used by our Wear composables.
             val contentModifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp)
@@ -178,18 +158,14 @@ fun WearApp(nodeDataListState: MutableState<List<ProxyNodeData?>>) {
                 .size(24.dp)
                 .wrapContentSize(align = Alignment.Center)
 
-            /* *************************** Part 3: ScalingLazyColumn *************************** */
             ScalingLazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 autoCentering = AutoCenteringParams(itemIndex = 0),
                 state = listState
             ) {
 
-                /* ******************* Part 1: Simple composables ******************* */
                 item { BluetoothButton(onBluetoothEnabled = { /* handle Bluetooth enabled */ }) }
 
-//                item { ButtonExample(contentModifier, iconModifier) }
-//                item { TextExample(contentModifier) }
 
                 for (index in nodeDataListState.value.indices) {
                     val applianceOn = nodeDataListState.value[index]?.applianceOn ?: 0
@@ -217,16 +193,3 @@ fun setNodeData(value: ByteArray?) {
 
     Log.d("dev_logs_main", "main activity - node data: $intValue")
 }
-
-//@Preview(
-//    widthDp = WEAR_PREVIEW_DEVICE_WIDTH_DP,
-//    heightDp = WEAR_PREVIEW_DEVICE_HEIGHT_DP,
-//    apiLevel = WEAR_PREVIEW_API_LEVEL,
-//    uiMode = WEAR_PREVIEW_UI_MODE,
-//    backgroundColor = WEAR_PREVIEW_BACKGROUND_COLOR_BLACK,
-//    showBackground = WEAR_PREVIEW_SHOW_BACKGROUND
-//)
-//@Composable
-//fun WearAppPreview() {
-//    WearApp()
-//}

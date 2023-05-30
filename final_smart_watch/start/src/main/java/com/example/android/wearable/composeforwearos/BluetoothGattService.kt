@@ -18,7 +18,6 @@ private var savedNodeDataList = MutableList<ProxyNodeData?>(3) {null}
 
 class BluetoothGattService(private val bluetoothScanService: BluetoothScanService) : BluetoothGattCallback() {
 
-//    private val value = byteArrayOf(0x01, 0x02, 0x03, 0x04)
 
     @SuppressLint("MissingPermission")
     override fun onConnectionStateChange(gatt: BluetoothGatt?, status: Int, newState: Int) {
@@ -218,7 +217,6 @@ class BluetoothGattService(private val bluetoothScanService: BluetoothScanServic
 
     private fun parseProxyNodeData(bytes: ByteArray): ProxyNodeData {
 
-//        Log.d("dev_logs_gatt", "Received bytes size: ${bytes.size}")
 
         val buffer = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN)
 
@@ -230,7 +228,6 @@ class BluetoothGattService(private val bluetoothScanService: BluetoothScanServic
         // Read voltageVal as a 32-bit value
         val voltageVal = buffer.int.toLong() and 0xFFFFFFFFL
 
-//        Log.d("dev_logs_gatt", "Parsed values 0: applianceOn=${applianceOn.toUInt()}, hysterisisLevel=${hysterisisLevel.toUInt()}, nodeNum=${nodeNum.toUInt()}, voltageVal=${voltageVal.toUInt()}")
 
 
         return ProxyNodeData(applianceOn, hysterisisLevel, nodeNum, voltageVal)
